@@ -17,9 +17,12 @@ public class ApiGatewayApplication {
 
 	@Bean
 	public RouteLocator routeLocator(RouteLocatorBuilder builder) {
+
 		return builder.routes()
 				.route("kitchen-route", r -> r.path("/kitchen/**").uri("lb://kitchen-service"))
 				.route("tracker-route", r -> r.path("/tracker/**").uri("lb://tracker-service"))
 				.build();
 	}
+
+	//test
 }
